@@ -2,7 +2,7 @@
 // Created by Alicja Siudak on 03/12/2019.
 //
 #include <string.h>
-#include "course.h"
+#include "../HeaderFiles/course.h"
 #include <stdio.h>
 
 course_t * createCourse(int course_no, char *course_name, int semester_no){

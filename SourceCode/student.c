@@ -2,7 +2,7 @@
 // Created by Alicja Siudak on 03/12/2019.
 //
 #include <string.h>
-#include "student.h"
+#include "../HeaderFiles/student.h"
 #include <stdio.h>
 
 student_t* createStudent(int student_no, char* f_name){
