@@ -2,6 +2,10 @@
 // Created by Alicja Siudak on 03/12/2019.
 //
 
+#include <string.h>
+#include "teacher.h"
+#include <stdio.h>
+
 teacher_t* createTeacher(int teacher_no, char *f_name){
     teacher_t* teacher = (teacher_t*)malloc(sizeof(teacher_t*));
     if(teacher == NULL){
