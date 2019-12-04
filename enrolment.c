@@ -2,7 +2,9 @@
 // Created by Alicja Siudak on 03/12/2019.
 //
 #include <string.h>
-#include "../HeaderFiles/enrolment.h"
+#include "course.h"
+#include "student.h"
+#include "enrolment.h"
 #include <stdio.h>
 
 enrolment_t * constructEnrolment(course_t *course, student_t *student){

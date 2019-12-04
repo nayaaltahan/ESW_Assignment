@@ -1,8 +1,9 @@
 //
 // Created by Alicja Siudak on 03/12/2019.
 //
+#include <stdlib.h>
 #include <string.h>
-#include "../HeaderFiles/student.h"
+#include "student.h"
 #include <stdio.h>
 
 student_t* createStudent(int student_no, char* f_name){
@@ -18,10 +19,9 @@ student_t* createStudent(int student_no, char* f_name){
 }
 
 void destroyStudent(student_t* student){
-
     free(student->f_name);
     //make sure nobody will use it
-    char* f_name == NULL;
+    char* f_name = NULL;
     free(student);
 }
 

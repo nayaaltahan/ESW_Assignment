@@ -2,7 +2,9 @@
 // Created by Alicja Siudak on 03/12/2019.
 //
 #include <string.h>
-#include "../HeaderFiles/assignment.h"
+#include "teacher.h"
+#include "course.h"
+#include "assignment.h"
 #include <stdio.h>
 
 assignment_t * createAssignment(course_t *course, teacher_t *teacher){
@@ -10,7 +12,8 @@ assignment_t * createAssignment(course_t *course, teacher_t *teacher){
     if(assignment == NULL){
         return NULL;
     }
-    else(){
+    else
+    {
         assignment->course = course;
         assignment->teacher = teacher;
         return assignment;
