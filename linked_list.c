@@ -36,7 +36,7 @@ p_list_t linked_list_create()
 }
 
 //returns the size of the list if it's created, if not, it returns -1
-int noOfItems(p_list_t list) {
+int no_of_items_in_list(p_list_t list) {
 	if (list != NULL) {
 		return list->size;
 	}
@@ -47,7 +47,7 @@ int noOfItems(p_list_t list) {
 
 
 //adds an item to the list - we need to check/modify the first-top-size-next of top and create the new node.
-int addItem(p_list_t list, void* item) {
+int add_item_to_list(p_list_t list, void* item) {
 	// Return 0 if item added else -1
 		//mallocatin the new node
 		p_node_t p_new_node;
@@ -108,7 +108,7 @@ p_node_t get_before(p_list_t list, p_node_t current, const p_node_t next) {
 
 
 //
-int removeItem(p_list_t list, void* item) {
+int remove_item_from_list(p_list_t list, void* item) {
 	// Return 0 if item removed else -1
 	p_node_t node = NULL;
 	//we search for the node containing the element
@@ -164,10 +164,10 @@ void linked_list_destroy(p_list_t self)
 
 //get Element by index
 //returns the pointer to the element.
-void* getElement(p_list_t self, int i)
+void* get_element_from_list(p_list_t self, int i)
 {
 	p_node_t current = self->first;
-	for (int j = 0; j < noOfItems(self); j++) {
+	for (int j = 0; j < no_of_items_in_list(self); j++) {
 		if (i == j) {
 			return current->element;
 		}
