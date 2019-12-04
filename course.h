@@ -4,7 +4,9 @@
 #ifndef ESW_ASSIGNMENT_COURSE_H
 #define ESW_ASSIGNMENT_COURSE_H
 
-typedef course_t{
+typedef struct course_t* p_course_t;
+
+typedef struct course_t{
 //C course_number course_name semester_number
 int course_no;
 char* course_name;

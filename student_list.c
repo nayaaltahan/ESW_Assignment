@@ -27,7 +27,7 @@ int no_of_students(p_student_list_t self)
 
 void student_list_destroy(p_student_list_t self)
 {
-	return linked_list_destroy(self->list);
+	linked_list_destroy(self->list);
 }
 
 int remove_student_from_list(p_student_list_t self, p_student_t student)
