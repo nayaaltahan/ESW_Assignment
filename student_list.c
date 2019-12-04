@@ -17,12 +17,12 @@ p_student_list_t student_list_create()
 
 p_student_t get_student_from_list(p_student_list_t self, int i)
 {	
-	return getElement(self->list, i);
+	return get_element_from_list(self->list, i);
 }
 
 int no_of_students(p_student_list_t self)
 {
-	return noOfItems(self->list);
+	return no_of_items_in_list(self->list);
 }
 
 void student_list_destroy(p_student_list_t self)
@@ -32,10 +32,10 @@ void student_list_destroy(p_student_list_t self)
 
 int remove_student_from_list(p_student_list_t self, p_student_t student)
 {
-	return removeItem(self->list, student);
+	return remove_item_from_list(self->list, student);
 }
 
 int add_student_to_list(p_student_list_t self, p_student_t student)
 {
-	return addItem(self->list, student);
+	return add_item_to_list(self->list, student);
 }
