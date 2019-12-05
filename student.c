@@ -3,14 +3,15 @@
 //
 #include <stdlib.h>
 #include <string.h>
-#include "student.h"
 #include <stdio.h>
 #include "linked_list.h"
+#include "student.h"
+
 
 static p_list_t student_list;
 
 p_list_t create_student_list(){
-    student_list->linked_list_create();
+    student_list = linked_list_create();
     return student_list;
 }
 
@@ -56,7 +57,7 @@ void print_Student_Information(p_student_t student)
 
 void add_student_to_list(p_student_t student){
 if(student == NULL){
-    student_list->create_student_list;
+    student_list = create_student_list;
 }
     add_item_to_list(student_list, student);
 }

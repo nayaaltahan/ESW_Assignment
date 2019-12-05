@@ -31,7 +31,7 @@ void setCourseName(course_t *course, char *course_name){
     course->course_name=course_name;
 }
 void setSemesterNo(course_t *course, int semester_no){
-    course->semeester_no = semester_no;
+    course->semester_no = semester_no;
 }
 int getCourseNo(course_t *course){
     return course->course_no;
