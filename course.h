@@ -22,6 +22,10 @@ int getCourseNo(course_t* course);
 char* getCourseName(course_t* course);
 int getSemesterNo(course_t* course);
 void print_Course_Information(course_t *course);
+p_list_t create_course_list();
+void remove_course_from_list(p_course_t course);
+void add_course_to_list(p_course_t course);
+p_list_t get_course_list();
 
 
 #endif //ESW_ASSIGNMENT_COURSE_H
