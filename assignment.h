@@ -6,6 +6,8 @@
 #define ESW_ASSIGNMENT_ASSIGNMENT_H
 
 #include "linked_list.h"
+#include "course.h"
+#include "teacher.h"
 
 
 typedef struct assignment_t* p_assignment_t;
@@ -16,13 +18,13 @@ typedef struct assignment_t {
 }assignment_t;
 
 p_list_t create_assignment_list();
-p_assignment_t* createAssignment(course_t* course, teacher_t* teacher);
-void destroyAssignment(p_assignment_t* assignment);
-void setAssignmentCourse(p_assignment_t* assignment, course_t* course);
-void setAssignmentTeacher(p_assignment_t* assignment, teacher_t* teacher);
-course_t* getAssignmentCourse(p_assignment_t* assignment);
-teacher_t* getAssignmentTeacher(p_assignment_t* assignment);
-void printAssignmentInformation(p_assignment_t* assignment);
+assignment_t* createAssignment(course_t* course, teacher_t* teacher);
+void destroyAssignment(assignment_t* assignment);
+void setAssignmentCourse(assignment_t* assignment, course_t* course);
+void setAssignmentTeacher(assignment_t* assignment, teacher_t* teacher);
+course_t* getAssignmentCourse(assignment_t* assignment);
+teacher_t* getAssignmentTeacher(assignment_t* assignment);
+void printAssignmentInformation(assignment_t* assignment);
 
 void add_assignment_to_list(p_assignment_t assignment);
 void remove_assignment_from_list(p_assignment_t assignment);
