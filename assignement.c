@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include "linked_list.h"
 #include "assignment.h"
+#include "course.h"
+#include "teacher.h"
 
 
 static p_list_t assignment_list;
@@ -29,9 +31,8 @@ assignment_t* createAssignment(course_t* course, teacher_t* teacher) {
 }
 
 void destroyAssignment(assignment_t* assignment) {
-	free(assignment->f_name);
-	char* f_name = NULL;
 	free(assignment);
+	assignment = NULL;
 }
 void setAssignmentCourse(assignment_t* assignment, course_t* course) {
 	assignment->course = course;
