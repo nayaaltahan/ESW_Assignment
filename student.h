@@ -7,7 +7,7 @@
 
 #include "linked_list.h"
 
-static
+
 typedef struct student_t* p_student_t;
 
 typedef struct student_t {

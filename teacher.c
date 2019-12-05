@@ -3,8 +3,17 @@
 //
 
 #include <string.h>
-#include "teacher.h"
 #include <stdio.h>
+#include "teacher.h"
+#include "linked_list.h"
+
+static p_list_t teacher_list;
+
+
+p_list_t create_teacher_list() {
+	teacher_list = linked_list_create();
+	return teacher_list;
+}
 
 teacher_t* createTeacher(int teacher_no, char *f_name){
     teacher_t* teacher = (teacher_t*)malloc(sizeof(teacher_t));
@@ -40,6 +49,23 @@ char* getTeacherFName(teacher_t* teacher){
     return teacher->f_name;
 }
 
-void printTeacherInformation(teacher_t* teacher){
+void print_Teacher_Information(teacher_t* teacher){
     printf("T \t %s\t %d\n", teacher->f_name, teacher->teacher_no);
 }
+
+void add_teacher_to_list(p_teacher_t teacher) {
+	if (teacher == NULL) {
+		teacher_list = create_teacher_list();
+	}
+	add_item_to_list(teacher_list, teacher);
+}
+
+void remove_teacher_from_list(p_teacher_t teacher) {
+	remove_item_from_list(teacher_list, teacher);
+}
+
+p_list_t get_teacher_list() {
+	return teacher_list;
+}
+
+
