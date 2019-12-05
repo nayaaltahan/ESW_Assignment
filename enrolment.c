@@ -5,7 +5,10 @@
 #include "course.h"
 #include "student.h"
 #include "enrolment.h"
+#include "linked_list.h"
 #include <stdio.h>
+
+static p_list_t enrolment_list;
 
 enrolment_t * constructEnrolment(course_t *course, student_t *student){
     enrolment_t *enrolment = (enrolment_t*)malloc(sizeof(enrolment_t));
@@ -37,6 +40,30 @@ student_t * getStudentOfEnrolment(enrolment_t *enrolment){
 }
 void printEnrolmentInformation(enrolment_t *enrolment){
     printf("E \t %d\t %d\n", enrolment->student->student_no, enrolment->course->course_no);
+}
+
+p_list_t create_enrolment_list()
+{
+	enrolment_list = linked_list_create();
+	return enrolment_list;
+}
+
+p_list_t get_enrolment_list()
+{
+	return enrolment_list;
+}
+
+void remove_enrolment_from_list(p_enrolment_t enrolment)
+{
+	remove_item_from_list(enrolment_list, enrolment);
+}
+
+void add_enrolment_to_list(p_enrolment_t enrolment)
+{
+	if (enrolment_list == NULL) {
+		enrolment_list = create_enrolment_list();
+	}
+	add_item_to_list(enrolment_list, enrolment);
 }
 
 

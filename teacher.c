@@ -54,7 +54,7 @@ void print_Teacher_Information(teacher_t* teacher){
 }
 
 void add_teacher_to_list(p_teacher_t teacher) {
-	if (teacher == NULL) {
+	if (teacher_list == NULL) {
 		teacher_list = create_teacher_list();
 	}
 	add_item_to_list(teacher_list, teacher);
