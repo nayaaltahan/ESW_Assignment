@@ -5,6 +5,13 @@
 #include "course.h"
 #include <stdio.h>
 
+static p_list_t course_list;
+
+p_list_t create_course_list(){
+    course_list = linked_list_create();
+    return course_list;
+}
+
 course_t * createCourse(int course_no, char *course_name, int semester_no){
     course_t *course = (course_t*)malloc(sizeof(course_t));
     if(course == NULL){
@@ -46,6 +53,20 @@ void printCourseInformation(course_t *course){
     printf("C \t %s\t %d\t %d\n", course->course_name, course->course_no, course->semester_no);
 }
 
+void add_course_to_list(p_course_t course){
+    if(course == NULL){
+        course_list = create_course_list;
+    }
+    add_item_to_list(course_list, course);
+}
+
+void remove_course_from_list(p_course_t course){
+    remove_item_from_list(course_list, course);
+}
+
+p_list_t get_course_list(){
+    return course_list;
+}
 
 
 
