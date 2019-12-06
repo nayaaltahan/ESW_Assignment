@@ -50,6 +50,9 @@ int no_of_items_in_list(p_list_t list) {
 int add_item_to_list(p_list_t list, void* item) {
 	// Return 0 if item added else -1
 		//mallocatin the new node
+	if(list == NULL){
+		list = linked_list_create(list);
+		}
 		p_node_t p_new_node;
 		p_new_node = malloc(sizeof(node_t));
 		//setting the next of the top (last) node as the new node

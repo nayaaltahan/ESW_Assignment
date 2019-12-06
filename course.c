@@ -2,8 +2,11 @@
 // Created by Alicja Siudak on 03/12/2019.
 //
 #include <string.h>
-#include "course.h"
 #include <stdio.h>
+#include "course.h"
+#include "linked_list.h"
+
+#pragma warning(disable : 4996)
 
 static p_list_t course_list;
 
@@ -49,19 +52,30 @@ char * getCourseName(course_t *course){
 int getSemesterNo(course_t *course){
     return course->semester_no;
 }
-void printCourseInformation(course_t *course){
+void print_Course_Information(course_t *course){
     printf("C \t %s\t %d\t %d\n", course->course_name, course->course_no, course->semester_no);
 }
 
 void add_course_to_list(p_course_t course){
-    if(course == NULL){
-        course_list = create_course_list;
+    if(course_list == NULL){
+        course_list = create_course_list();
     }
     add_item_to_list(course_list, course);
 }
 
 void remove_course_from_list(p_course_t course){
     remove_item_from_list(course_list, course);
+}
+
+course_t* get_course_from_list(int course_no)
+{
+	for (int i = 0; i < no_of_items_in_list(course_list); i++) {
+		p_course_t course = get_element_from_list(course_list, i);
+		if (course->course_no == course_no) {
+			return course;
+		}
+	}
+	return NULL;
 }
 
 p_list_t get_course_list(){

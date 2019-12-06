@@ -25,7 +25,7 @@ void setAssignmentTeacher(assignment_t* assignment, teacher_t* teacher);
 course_t* getAssignmentCourse(assignment_t* assignment);
 teacher_t* getAssignmentTeacher(assignment_t* assignment);
 void printAssignmentInformation(assignment_t* assignment);
-
+p_list_t get_assignment_list();
 void add_assignment_to_list(p_assignment_t assignment);
 void remove_assignment_from_list(p_assignment_t assignment);
 
