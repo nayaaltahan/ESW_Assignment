@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "linked_list.h"
 #include "student.h"
+#include "enrolment.h"
 
 #pragma warning(disable : 4996)
 
@@ -75,6 +76,14 @@ if(student_list == NULL){
 
 void remove_student_from_list(p_student_t student){
     remove_item_from_list(student_list, student);
+	p_list_t enrolments_list = get_enrolment_list();
+	for (int i = 0; i < no_of_items_in_list(enrolments_list); i++) {
+		p_enrolment_t enrolment = get_element_from_list(enrolments_list, i);
+		if (getStudentOfEnrolment(enrolment) == student) {
+			remove_enrolment_from_list(enrolment);
+		}
+	}
+	
 }
 
 p_list_t get_student_list(){
