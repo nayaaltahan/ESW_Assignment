@@ -5,6 +5,8 @@
 #ifndef ESW_ASSIGNMENT_ENROLMENT_H
 #define ESW_ASSIGNMENT_ENROLMENT_H
 
+#include "student.h"
+
 typedef struct enrolment_t* p_enrolment_t;
 
 typedef struct enrolment_t {

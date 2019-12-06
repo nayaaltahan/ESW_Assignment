@@ -23,9 +23,9 @@ void setStudentFName(p_student_t student, char *f_name);
 int getStudentNo(p_student_t student);
 char* getStudentFName(p_student_t student);
 void print_Student_Information(p_student_t student);
-
-void add_to_student_list(p_student_t student);
-void remove_from_student_list();
+student_t* get_student_from_list(int student_no);
+void add_student_to_list(p_student_t student);
+void remove_student_from_list(p_student_t);
 
 #endif //ESW_ASSIGNMENT_STUDENT_H
 

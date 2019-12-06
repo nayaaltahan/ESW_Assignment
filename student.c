@@ -7,6 +7,7 @@
 #include "linked_list.h"
 #include "student.h"
 
+#pragma warning(disable : 4996)
 
 static p_list_t student_list;
 
@@ -55,9 +56,19 @@ void print_Student_Information(p_student_t student)
     printf("S \t %s\t %d\n", student->f_name, student->student_no);
 }
 
+student_t* get_student_from_list(int student_no)
+{
+	for (int i = 0; i < no_of_items_in_list(student_list); i++) {
+		if (((p_student_t)get_element_from_list(student_list, i))->student_no == student_no) {
+			return ((p_student_t)get_element_from_list(student_list, i));
+		}
+	}
+	return NULL;
+}
+
 void add_student_to_list(p_student_t student){
-if(student == NULL){
-    student_list = create_student_list;
+if(student_list == NULL){
+    student_list = create_student_list();
 }
     add_item_to_list(student_list, student);
 }

@@ -7,6 +7,8 @@
 #include "teacher.h"
 #include "linked_list.h"
 
+#pragma warning(disable : 4996)
+
 static p_list_t teacher_list;
 
 
@@ -58,6 +60,16 @@ void add_teacher_to_list(p_teacher_t teacher) {
 		teacher_list = create_teacher_list();
 	}
 	add_item_to_list(teacher_list, teacher);
+}
+
+teacher_t* get_teacher_from_list(int teacher_no)
+{
+	for (int i = 0; i < no_of_items_in_list; i++) {
+		if (((p_teacher_t)get_element_from_list(teacher_list, i))->teacher_no == teacher_no) {
+			return ((p_teacher_t)get_element_from_list(teacher_list, i));
+		}
+	}
+	return NULL;
 }
 
 void remove_teacher_from_list(p_teacher_t teacher) {

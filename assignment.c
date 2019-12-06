@@ -53,7 +53,7 @@ void printAssignmentInformation(assignment_t* assignment) {
 
 void add_assignment_to_list(p_assignment_t assignment) {
 	if (assignment_list == NULL) {
-		assignment_list = create_sassignment_list();
+		assignment_list = create_assignment_list();
 	}
 	add_item_to_list(assignment_list, assignment);
 }
