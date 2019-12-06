@@ -15,6 +15,13 @@ p_list_t create_course_list(){
     return course_list;
 }
 
+static p_list_t course_list;
+
+p_list_t create_course_list(){
+    course_list = linked_list_create();
+    return course_list;
+}
+
 course_t * createCourse(int course_no, char *course_name, int semester_no){
     course_t *course = (course_t*)malloc(sizeof(course_t));
     if(course == NULL){
@@ -59,13 +66,14 @@ void print_Course_Information(course_t *course){
 void add_course_to_list(p_course_t course){
     if(course_list == NULL){
         course_list = create_course_list();
-    }
+
     add_item_to_list(course_list, course);
 }
 
 void remove_course_from_list(p_course_t course){
     remove_item_from_list(course_list, course);
 }
+
 
 course_t* get_course_from_list(int course_no)
 {
